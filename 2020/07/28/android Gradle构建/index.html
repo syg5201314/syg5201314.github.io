@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <title>猴小爱</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+<link rel="stylesheet", href="/./css/style.css">
+<link rel="shortcut icon", href="/./favicon.ico">
+<link rel="apple-touch-icon", href="/./apple-touch-icon.png">
+
+        
+    
+    <link rel='stylesheet' href="/./css/dracula.css">
+
+    <meta name="generator" content="Hexo 5.2.0"></head>
+    <body>
+        <header class="al_header al_pos_fixed">
+    <div class="al_header_container dis_flex_jcenter">
+        <div class="al_header_container_left">
+            <div class="al_header_site_title">
+                <a href="/">Sunning</a>
+            </div>
+        </div>
+
+        <div class="dis_flex_jcenter">
+            <div class="al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="al_sidebar">
+
+    <div class="al_sidebar_overlay al_full_cover"></div>
+
+    <div class="al_pos_fixed al_sidebar_cnt">
+        <div class="dis_flex_acenter al_sidebar_header">
+            <h3>Sunning</h3>
+            <div class="al_sidebar_close al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
+                </svg>
+            </div>
+        </div>
+
+        <div class="al_sidebar_author_cnt">
+
+            <div class="al_sidebar_author_info">
+                <h4>Sunning</h4>
+                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
+                <p>一个编程的小学生</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+        
+    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
+        <img class="al_lightbox_img"/>
+    </div>
+    <div class="al_page_background dis_flex_center al_full_cover"></div>
+    <div class="al_page_container">
+        <div class="al_pos_ab al_fake_background"></div>
+        <div class="al_main_container al_shadow al_main_page_container">
+            <article class="al_article">
+                <header>
+                    <h1 class="al_page_title">
+                        No Title
+                    </h1>
+                    <div class="al_page_info dis_flex">
+                        <div class="al_page_content_info">
+                            July 28, 2020 04:07 AM
+                        </div>
+
+                        
+
+                        
+                        <span class="tags"></span>
+                    </div>
+                </header>
+
+                
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Initialization"><span class="toc-text">Initialization</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Execution"><span class="toc-text">Execution</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-Hook"><span class="toc-text">生命周期 Hook</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Initialization-1"><span class="toc-text">Initialization</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Configuration-Hook"><span class="toc-text">Configuration Hook</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android-Gradle%E6%9E%84%E5%BB%BA"><span class="toc-text">android Gradle构建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-dependency-%E7%9A%84-configuration"><span class="toc-text">什么是 dependency 的 configuration</span></a></li></ol>
+                    </div>
+                
+
+                
+                <section id="post-body">
+                    <blockquote>
+<p>根据上面的知识, 如果仅仅作为尝试而构建一个简单的模块, setting script 是可有可无的. 因此我们只需要在当前(mytest) 目录下新建 build.gradle.kts 即可.</p>
+<p>在 mytest 目录下, 执行 <code>gradle</code> 会看到输出了 “hello world”. 正如上面我们学到的一样, 执行 gradle 命令后, 会执行当前目录下的构建脚本.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pringln(&quot;hello world&quot;)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>首先settings是必须需要的，否则在当前目录报错。</strong></p>
+<p><strong>其次print写成了pring…这不检查的吗?</strong></p>
+<blockquote>
+<p>tasks.create(“foo”) {    println(“…”) }</p>
+</blockquote>
+<p>创建任务…</p>
+<p>这是写在哪里的？tasks是哪里来的? 这句话是什么意思？通通没有说明。。。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tasks.test &#123;</span><br><span class="line">    <span class="comment">// lazy configuration</span></span><br><span class="line">    println(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这句话到底写在哪里的….</p>
+<p>settings里执行就报错</p>
+<p><strong>要先创建项目..</strong></p>
+<p><strong><code>gradle init</code></strong></p>
+<p><strong>然后同步项目..</strong></p>
+<p><strong>最终才可以编写上述代码..这教程对初学者太不友好了，任务这一章节按照教程的做法执行一定会失败。</strong></p>
+<p><strong>所有代码都没有写执行结果。</strong></p>
+<p><strong>错字连篇。</strong></p>
+<h5 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h5><p>![image-20200726090859634](/Users/sunning/Library/Application Support/typora-user-images/image-20200726090859634.png)</p>
+<ol>
+<li><h6 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h6><p>阶段主要目的是初始化构建，又分为两个子过程</p>
+<pre><code>1. Init Script =&gt; Init script 会读取全局脚本
+
+ 2. Setting Script. =&gt;它初始化了一次构建所参与的所有模块</code></pre>
+<ol start="2">
+<li><h6 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h6><p>执行 build.gradle(.kts) 中的语句, 根据脚本代码创建对应的 task, 最终根据所有 task 生成对应的依赖图.</p>
+</li>
+</ol>
+</li>
+<li><h6 id="Execution"><a href="#Execution" class="headerlink" title="Execution"></a>Execution</h6><p>进行编译和打包动作</p>
+</li>
+</ol>
+<h5 id="生命周期-Hook"><a href="#生命周期-Hook" class="headerlink" title="生命周期 Hook"></a>生命周期 Hook</h5><p>![image-20200726091327546](/Users/sunning/Library/Application Support/typora-user-images/image-20200726091327546.png)</p>
+<h6 id="Initialization-1"><a href="#Initialization-1" class="headerlink" title="Initialization"></a>Initialization</h6><p><code>gradle.settingsEvaluated</code></p>
+<p>Settings.gradle中 当SettingsGradle Evaluated后…Evaluated这个单词怎么理解？被转为图后？？</p>
+<p><code>projectsLoaded</code></p>
+<p>Settings.gradle中当所有project被加载完成后..</p>
+<p>projectsLoaded 回调时已经根据 setting script 创建了各个模块的 <a target="_blank" rel="noopener" href="https://juejin.im/book/5db8f668f265da4d0d0dc4d2/section/5db9806ff265da4d185fb368#Api-Project">Project</a> 对象,</p>
+<p><code>gradle.allprojects &#123;    beforeEvaluate &#123;        ....    &#125; &#125;</code></p>
+<p>Initialization 阶段结束. 我们已然只有 gradle 和 settings 对象可以使用</p>
+<h6 id="Configuration-Hook"><a href="#Configuration-Hook" class="headerlink" title="Configuration Hook"></a>Configuration Hook</h6><p>在每个 build script 被执行前都会触发对应模块的 <strong>beforeEvaluate</strong> 和 <strong>beforeProject</strong>.</p>
+<p>可以通过 gradle.beforeProject 为所有 project 设置 hook.</p>
+<p>虽然 beforeEvalute 属于 project 的生命周期, 但是此时 build script 尚未被加载, 所以 beforeEvaluate 的设置依然要在 init script 或 setting script 中进行:</p>
+<p>汇总：****</p>
+<p>Initialization 阶段的 <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:settingsEvaluated(org.gradle.api.Action)">settingsEvaluated</a>, <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:projectsLoaded(org.gradle.api.Action)">projectsLoaded</a>. Configuration 阶段的 <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:beforeProject(org.gradle.api.Action)">beforeProject</a>, <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:afterProject(org.gradle.api.Action)">afterProject</a>, <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:projectsEvaluated(org.gradle.api.Action)">projectsEvaluated</a>. 以及 Execution 阶段的 <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:buildFinished(org.gradle.api.Action)">buildFinished</a> 等等.</p>
+<hr>
+<h3 id="android-Gradle构建"><a href="#android-Gradle构建" class="headerlink" title="android Gradle构建"></a>android Gradle构建</h3><p>settings.gradle 就是负责管理 “当前参与构建的子模块”.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">include(<span class="string">&quot;:app&quot;</span>)</span><br><span class="line"></span><br><span class="line">include(<span class="string">&quot;:external-lib&quot;</span>)</span><br><span class="line">project(<span class="string">&quot;:external-lib&quot;</span>).projectDir = file(<span class="string">&quot;../OtherDirectory/some-library&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="什么是-dependency-的-configuration"><a href="#什么是-dependency-的-configuration" class="headerlink" title="什么是 dependency 的 configuration"></a>什么是 dependency 的 configuration</h5><p>不同的configuration执行不同策略</p>
+<p>例如 implementation、api、testRuntime</p>
+<p>doFirst`</p>
+<p>当某一个任务开始要做的时候开始执行</p>
+<p><code>doLast</code></p>
+<p>当某一个任务要做完的时候执行</p>
+<p><strong>inputs.dir</strong></p>
+<p><strong>outputs.file</strong></p>
+<p><strong>增量更新</strong></p>
+
+                </section>
+
+                
+                
+                
+
+
+            
+            <nav class="dis_flex al_post_nav">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/">
+                    
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
+                        </svg>
+                        <span class="al_text_ellipsis al_post_nav_desc"></span>
+                    
+                </a>
+                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                    
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+        <div class="al_index_footer dis_flex_center">
+    <div class="al_index_footer_item al_index_footer_title">
+        Sunning
+    </div>
+
+    
+    
+
+    <div class="al_index_footer_item al_index_footer_extra">
+        Created By 
+        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
+         · Power By 
+        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    </div>
+
+    <div class="al_index_footer_item al_index_footer_extra_right">
+        All Right Reserved
+    </div>
+</div>
+
+        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+        
+        
+        
+        
+    </body>
+</html>
+        

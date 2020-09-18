@@ -1,99 +1,84 @@
-
 <!DOCTYPE html>
-<html lang="cn">
-    <head>
-        <title>猴小爱</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
-<link rel="stylesheet", href="/./css/style.css">
-<link rel="shortcut icon", href="/./favicon.ico">
-<link rel="apple-touch-icon", href="/./apple-touch-icon.png">
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-        
-    
-    <link rel='stylesheet' href="/./css/dracula.css">
+  
+  <title>Sunning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="根据上面的知识, 如果仅仅作为尝试而构建一个简单的模块, setting script 是可有可无的. 因此我们只需要在当前(mytest) 目录下新建 build.gradle.kts 即可. 在 mytest 目录下, 执行 gradle 会看到输出了 “hello world”. 正如上面我们学到的一样, 执行 gradle 命令后, 会执行当前目录下的构建脚本. 1pringln(&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sunning">
+<meta property="og:url" content="http://nleme.com/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/index.html">
+<meta property="og:site_name" content="Sunning">
+<meta property="og:description" content="根据上面的知识, 如果仅仅作为尝试而构建一个简单的模块, setting script 是可有可无的. 因此我们只需要在当前(mytest) 目录下新建 build.gradle.kts 即可. 在 mytest 目录下, 执行 gradle 会看到输出了 “hello world”. 正如上面我们学到的一样, 执行 gradle 命令后, 会执行当前目录下的构建脚本. 1pringln(&amp;qu">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-07-28T04:13:02.181Z">
+<meta property="article:modified_time" content="2020-07-28T04:13:02.181Z">
+<meta property="article:author" content="Sunning">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Sunning" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-    <meta name="generator" content="Hexo 5.2.0"></head>
-    <body>
-        <header class="al_header al_pos_fixed">
-    <div class="al_header_container dis_flex_jcenter">
-        <div class="al_header_container_left">
-            <div class="al_header_site_title">
-                <a href="/">Sunning</a>
-            </div>
-        </div>
+<meta name="generator" content="Hexo 5.2.0"></head>
 
-        <div class="dis_flex_jcenter">
-            <div class="al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
-                </svg>
-            </div>
-        </div>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sunning</a>
+      </h1>
+      
     </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nleme.com"></form>
+      </div>
+    </div>
+  </div>
 </header>
-
-        <div class="al_sidebar">
-
-    <div class="al_sidebar_overlay al_full_cover"></div>
-
-    <div class="al_pos_fixed al_sidebar_cnt">
-        <div class="dis_flex_acenter al_sidebar_header">
-            <h3>Sunning</h3>
-            <div class="al_sidebar_close al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
-                </svg>
-            </div>
-        </div>
-
-        <div class="al_sidebar_author_cnt">
-
-            <div class="al_sidebar_author_info">
-                <h4>Sunning</h4>
-                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
-                <p>一个编程的小学生</p>
-            </div>
-
-            
-        </div>
-    </div>
-</div>
-
-        
-    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
-        <img class="al_lightbox_img"/>
-    </div>
-    <div class="al_page_background dis_flex_center al_full_cover"></div>
-    <div class="al_page_container">
-        <div class="al_pos_ab al_fake_background"></div>
-        <div class="al_main_container al_shadow al_main_page_container">
-            <article class="al_article">
-                <header>
-                    <h1 class="al_page_title">
-                        No Title
-                    </h1>
-                    <div class="al_page_info dis_flex">
-                        <div class="al_page_content_info">
-                            July 28, 2020 04:07 AM
-                        </div>
-
-                        
-
-                        
-                        <span class="tags"></span>
-                    </div>
-                </header>
-
-                
-                    <div class="al_page_content_outline">
-                        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Initialization"><span class="toc-text">Initialization</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Execution"><span class="toc-text">Execution</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-Hook"><span class="toc-text">生命周期 Hook</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Initialization-1"><span class="toc-text">Initialization</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Configuration-Hook"><span class="toc-text">Configuration Hook</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android-Gradle%E6%9E%84%E5%BB%BA"><span class="toc-text">android Gradle构建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-dependency-%E7%9A%84-configuration"><span class="toc-text">什么是 dependency 的 configuration</span></a></li></ol>
-                    </div>
-                
-
-                
-                <section id="post-body">
-                    <blockquote>
+      <div class="outer">
+        <section id="main"><article id="post-android Gradle构建" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/" class="article-date">
+  <time datetime="2020-07-28T04:13:02.181Z" itemprop="datePublished">2020-07-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
 <p>根据上面的知识, 如果仅仅作为尝试而构建一个简单的模块, setting script 是可有可无的. 因此我们只需要在当前(mytest) 目录下新建 build.gradle.kts 即可.</p>
 <p>在 mytest 目录下, 执行 <code>gradle</code> 会看到输出了 “hello world”. 正如上面我们学到的一样, 执行 gradle 命令后, 会执行当前目录下的构建脚本.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pringln(&quot;hello world&quot;)</span><br></pre></td></tr></table></figure>
@@ -160,56 +145,113 @@
 <p><strong>outputs.file</strong></p>
 <p><strong>增量更新</strong></p>
 
-                </section>
-
-                
-                
-                
-
-
-            
-            <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/">
-                    
-                        <svg class="al_arrow">
-                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
-                        </svg>
-                        <span class="al_text_ellipsis al_post_nav_desc"></span>
-                    
-                </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/">
-                    
-                </a>
-            </nav>
-        </div>
+      
     </div>
-
-
-        <div class="al_index_footer dis_flex_center">
-    <div class="al_index_footer_item al_index_footer_title">
-        Sunning
-    </div>
-
+    <footer class="article-footer">
+      <a data-url="http://nleme.com/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/" data-id="ckf7yuhwj0001uk1ohzwqh7ox" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
     
+<nav id="article-nav">
+  
+    <a href="/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
     
 
-    <div class="al_index_footer_item al_index_footer_extra">
-        Created By 
-        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
-         · Power By 
-        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
-    </div>
+  
+    
 
-    <div class="al_index_footer_item al_index_footer_extra_right">
-        All Right Reserved
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
     </div>
-</div>
+  </div>
 
-        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
         
+          <li>
+            <a href="/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/">(no title)</a>
+          </li>
         
+          <li>
+            <a href="/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/">(no title)</a>
+          </li>
         
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
         
-    </body>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Sunning<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
 </html>
-        

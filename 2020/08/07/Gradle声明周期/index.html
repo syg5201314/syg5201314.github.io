@@ -1,99 +1,84 @@
-
 <!DOCTYPE html>
-<html lang="cn">
-    <head>
-        <title>猴小爱</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
-<link rel="stylesheet", href="/./css/style.css">
-<link rel="shortcut icon", href="/./favicon.ico">
-<link rel="apple-touch-icon", href="/./apple-touch-icon.png">
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-        
-    
-    <link rel='stylesheet' href="/./css/dracula.css">
+  
+  <title>Sunning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Gradle声明周期初始化阶段​    初始化阶段根据setting.gradle文件配置项目，找出哪些文件要参与到构建中。 实际执行为 settings.gradle 脚本，这个阶段已有的构建脚本不会执行。 配置阶段​    在配置阶段Gradle 构造了一个模型来表示任务,这个阶段非常适合于为项目或指定 task 设置所需的配置。实质为解析每个被加入构建项目的 build.gradle 脚本。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sunning">
+<meta property="og:url" content="http://nleme.com/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/index.html">
+<meta property="og:site_name" content="Sunning">
+<meta property="og:description" content="Gradle声明周期初始化阶段​    初始化阶段根据setting.gradle文件配置项目，找出哪些文件要参与到构建中。 实际执行为 settings.gradle 脚本，这个阶段已有的构建脚本不会执行。 配置阶段​    在配置阶段Gradle 构造了一个模型来表示任务,这个阶段非常适合于为项目或指定 task 设置所需的配置。实质为解析每个被加入构建项目的 build.gradle 脚本。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-08-07T03:42:50.812Z">
+<meta property="article:modified_time" content="2020-08-07T03:48:01.947Z">
+<meta property="article:author" content="Sunning">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Sunning" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-    <meta name="generator" content="Hexo 5.2.0"></head>
-    <body>
-        <header class="al_header al_pos_fixed">
-    <div class="al_header_container dis_flex_jcenter">
-        <div class="al_header_container_left">
-            <div class="al_header_site_title">
-                <a href="/">Sunning</a>
-            </div>
-        </div>
+<meta name="generator" content="Hexo 5.2.0"></head>
 
-        <div class="dis_flex_jcenter">
-            <div class="al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
-                </svg>
-            </div>
-        </div>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sunning</a>
+      </h1>
+      
     </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nleme.com"></form>
+      </div>
+    </div>
+  </div>
 </header>
-
-        <div class="al_sidebar">
-
-    <div class="al_sidebar_overlay al_full_cover"></div>
-
-    <div class="al_pos_fixed al_sidebar_cnt">
-        <div class="dis_flex_acenter al_sidebar_header">
-            <h3>Sunning</h3>
-            <div class="al_sidebar_close al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
-                </svg>
-            </div>
-        </div>
-
-        <div class="al_sidebar_author_cnt">
-
-            <div class="al_sidebar_author_info">
-                <h4>Sunning</h4>
-                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
-                <p>一个编程的小学生</p>
-            </div>
-
-            
-        </div>
-    </div>
-</div>
-
-        
-    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
-        <img class="al_lightbox_img"/>
-    </div>
-    <div class="al_page_background dis_flex_center al_full_cover"></div>
-    <div class="al_page_container">
-        <div class="al_pos_ab al_fake_background"></div>
-        <div class="al_main_container al_shadow al_main_page_container">
-            <article class="al_article">
-                <header>
-                    <h1 class="al_page_title">
-                        No Title
-                    </h1>
-                    <div class="al_page_info dis_flex">
-                        <div class="al_page_content_info">
-                            August 07, 2020 03:08 AM
-                        </div>
-
-                        
-
-                        
-                        <span class="tags"></span>
-                    </div>
-                </header>
-
-                
-                    <div class="al_page_content_outline">
-                        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F"><span class="toc-text">Gradle声明周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%98%B6%E6%AE%B5"><span class="toc-text">初始化阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%98%B6%E6%AE%B5"><span class="toc-text">配置阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E9%98%B6%E6%AE%B5"><span class="toc-text">执行阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9B%91%E5%90%AC%E6%96%B9%E6%B3%95"><span class="toc-text">生命周期监听方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Projet-%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%9E%E8%B0%83%E6%96%B9%E6%B3%95"><span class="toc-text">Projet 提供的一些生命周期回调方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Gradle-%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%9E%E8%B0%83%E6%96%B9%E6%B3%95"><span class="toc-text">Gradle 提供的一些生命周期回调方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Task-%E6%89%A7%E8%A1%8C%E5%9B%BE%EF%BC%88TaskExecutionGraph%EF%BC%89"><span class="toc-text">Task 执行图（TaskExecutionGraph）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#addTaskExecutionGraphListener"><span class="toc-text">addTaskExecutionGraphListener</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#addTaskExecutionListener"><span class="toc-text">addTaskExecutionListener</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#afterTask"><span class="toc-text">afterTask</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#beforeTask"><span class="toc-text">beforeTask</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#whenReady"><span class="toc-text">whenReady</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%A1%BA%E5%BA%8F"><span class="toc-text">生命周期顺序</span></a></li></ol></li></ol>
-                    </div>
-                
-
-                
-                <section id="post-body">
-                    <h3 id="Gradle声明周期"><a href="#Gradle声明周期" class="headerlink" title="Gradle声明周期"></a>Gradle声明周期</h3><h4 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段"></a>初始化阶段</h4><p>​    <strong>初始化</strong>阶段根据setting.gradle文件配置项目，找出哪些文件要参与到构建中。 实际执行为 <strong>settings.gradle</strong> 脚本，这个阶段已有的构建脚本不会执行。</p>
+      <div class="outer">
+        <section id="main"><article id="post-Gradle声明周期" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/" class="article-date">
+  <time datetime="2020-08-07T03:42:50.812Z" itemprop="datePublished">2020-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Gradle声明周期"><a href="#Gradle声明周期" class="headerlink" title="Gradle声明周期"></a>Gradle声明周期</h3><h4 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段"></a>初始化阶段</h4><p>​    <strong>初始化</strong>阶段根据setting.gradle文件配置项目，找出哪些文件要参与到构建中。 实际执行为 <strong>settings.gradle</strong> 脚本，这个阶段已有的构建脚本不会执行。</p>
 <h4 id="配置阶段"><a href="#配置阶段" class="headerlink" title="配置阶段"></a>配置阶段</h4><p>​    在<strong>配置阶段</strong>Gradle 构造了一个模型来表示任务,这个阶段非常适合于为项目或指定 task 设置所需的配置。实质为解析每个被加入构建项目的 build.gradle 脚本。</p>
 <h4 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h4><p><strong><em>注意，项目的每一次构建的任何配置代码都可以被执行–即使你只执行 gradle tasks</em></strong></p>
 <p><strong>执行阶段</strong>，所有的 task 都应该以正确的顺序被执行，执行顺序时由它们的依赖决定的。</p>
@@ -188,56 +173,109 @@
 
 <p>因此，生命周期回调的<strong>执行顺序</strong>是：<br><strong>gradle.settingsEvaluated-&gt;</strong><br><strong>gradle.projectsLoaded-&gt;</strong><br><strong>gradle.beforeProject-&gt;</strong><br><strong>project.beforeEvaluate-&gt;</strong><br><strong>gradle.afterProject-&gt;</strong><br><strong>project.afterEvaluate-&gt;</strong><br><strong>gradle.projectsEvaluated-&gt;</strong><br><strong>gradle.taskGraph.graphPopulated-&gt;</strong><br><strong>gradle.taskGraph.whenReady-&gt;</strong><br><strong>gradle.buildFinished</strong></p>
 
-                </section>
-
-                
-                
-                
-
-
-            
-            <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/">
-                    
-                </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/">
-                    
-                        <span class="al_text_ellipsis al_post_nav_desc"></span>
-                        <svg class="al_arrow">
-                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
-                        </svg>
-                    
-                </a>
-            </nav>
-        </div>
+      
     </div>
-
-
-        <div class="al_index_footer dis_flex_center">
-    <div class="al_index_footer_item al_index_footer_title">
-        Sunning
-    </div>
-
+    <footer class="article-footer">
+      <a data-url="http://nleme.com/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/" data-id="ckf7yuhw50000uk1o6bey80gd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
     
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
     
 
-    <div class="al_index_footer_item al_index_footer_extra">
-        Created By 
-        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
-         · Power By 
-        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
-    </div>
+  
+    
 
-    <div class="al_index_footer_item al_index_footer_extra_right">
-        All Right Reserved
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
     </div>
-</div>
+  </div>
 
-        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
         
+          <li>
+            <a href="/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/">(no title)</a>
+          </li>
         
+          <li>
+            <a href="/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/">(no title)</a>
+          </li>
         
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
         
-    </body>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Sunning<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
 </html>
-        

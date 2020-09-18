@@ -17,7 +17,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Sunning</title>
+  <title>Video接口文档 - Sunning</title>
   
 
   
@@ -405,8 +405,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">Video接口文档</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path"></div> 
   <div id="pjax-comment-placeholder"></div> 
@@ -445,76 +445,80 @@
     
     
     
+      <h1 class="title">
+        Video接口文档
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Sep 18, 2020</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="Video接口文档" data-path="/2020/09/18/Video%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
   </div>
 
 
   
-  <blockquote>
-<p>根据上面的知识, 如果仅仅作为尝试而构建一个简单的模块, setting script 是可有可无的. 因此我们只需要在当前(mytest) 目录下新建 build.gradle.kts 即可.</p>
-<p>在 mytest 目录下, 执行 <code>gradle</code> 会看到输出了 “hello world”. 正如上面我们学到的一样, 执行 gradle 命令后, 会执行当前目录下的构建脚本.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pringln(&quot;hello world&quot;)</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p><strong>首先settings是必须需要的，否则在当前目录报错。</strong></p>
-<p><strong>其次print写成了pring…这不检查的吗?</strong></p>
-<blockquote>
-<p>tasks.create(“foo”) {    println(“…”) }</p>
-</blockquote>
-<p>创建任务…</p>
-<p>这是写在哪里的？tasks是哪里来的? 这句话是什么意思？通通没有说明。。。</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tasks.test &#123;</span><br><span class="line">    <span class="comment">// lazy configuration</span></span><br><span class="line">    println(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这句话到底写在哪里的….</p>
-<p>settings里执行就报错</p>
-<p><strong>要先创建项目..</strong></p>
-<p><strong><code>gradle init</code></strong></p>
-<p><strong>然后同步项目..</strong></p>
-<p><strong>最终才可以编写上述代码..这教程对初学者太不友好了，任务这一章节按照教程的做法执行一定会失败。</strong></p>
-<p><strong>所有代码都没有写执行结果。</strong></p>
-<p><strong>错字连篇。</strong></p>
-<h5 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h5><p>![image-20200726090859634](/Users/sunning/Library/Application Support/typora-user-images/image-20200726090859634.png)</p>
-<ol>
-<li><h6 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h6><p>阶段主要目的是初始化构建，又分为两个子过程</p>
-<pre><code>1. Init Script =&gt; Init script 会读取全局脚本
-
- 2. Setting Script. =&gt;它初始化了一次构建所参与的所有模块</code></pre>
-<ol start="2">
-<li><h6 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h6><p>执行 build.gradle(.kts) 中的语句, 根据脚本代码创建对应的 task, 最终根据所有 task 生成对应的依赖图.</p>
-</li>
-</ol>
-</li>
-<li><h6 id="Execution"><a href="#Execution" class="headerlink" title="Execution"></a>Execution</h6><p>进行编译和打包动作</p>
-</li>
-</ol>
-<h5 id="生命周期-Hook"><a href="#生命周期-Hook" class="headerlink" title="生命周期 Hook"></a>生命周期 Hook</h5><p>![image-20200726091327546](/Users/sunning/Library/Application Support/typora-user-images/image-20200726091327546.png)</p>
-<h6 id="Initialization-1"><a href="#Initialization-1" class="headerlink" title="Initialization"></a>Initialization</h6><p><code>gradle.settingsEvaluated</code></p>
-<p>Settings.gradle中 当SettingsGradle Evaluated后…Evaluated这个单词怎么理解？被转为图后？？</p>
-<p><code>projectsLoaded</code></p>
-<p>Settings.gradle中当所有project被加载完成后..</p>
-<p>projectsLoaded 回调时已经根据 setting script 创建了各个模块的 <a target="_blank" rel="noopener" href="https://juejin.im/book/5db8f668f265da4d0d0dc4d2/section/5db9806ff265da4d185fb368#Api-Project">Project</a> 对象,</p>
-<p><code>gradle.allprojects &#123;    beforeEvaluate &#123;        ....    &#125; &#125;</code></p>
-<p>Initialization 阶段结束. 我们已然只有 gradle 和 settings 对象可以使用</p>
-<h6 id="Configuration-Hook"><a href="#Configuration-Hook" class="headerlink" title="Configuration Hook"></a>Configuration Hook</h6><p>在每个 build script 被执行前都会触发对应模块的 <strong>beforeEvaluate</strong> 和 <strong>beforeProject</strong>.</p>
-<p>可以通过 gradle.beforeProject 为所有 project 设置 hook.</p>
-<p>虽然 beforeEvalute 属于 project 的生命周期, 但是此时 build script 尚未被加载, 所以 beforeEvaluate 的设置依然要在 init script 或 setting script 中进行:</p>
-<p>汇总：****</p>
-<p>Initialization 阶段的 <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:settingsEvaluated(org.gradle.api.Action)">settingsEvaluated</a>, <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:projectsLoaded(org.gradle.api.Action)">projectsLoaded</a>. Configuration 阶段的 <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:beforeProject(org.gradle.api.Action)">beforeProject</a>, <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:afterProject(org.gradle.api.Action)">afterProject</a>, <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:projectsEvaluated(org.gradle.api.Action)">projectsEvaluated</a>. 以及 Execution 阶段的 <a target="_blank" rel="noopener" href="https://docs.gradle.org/5.6.1/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:buildFinished(org.gradle.api.Action)">buildFinished</a> 等等.</p>
-<hr>
-<h3 id="android-Gradle构建"><a href="#android-Gradle构建" class="headerlink" title="android Gradle构建"></a>android Gradle构建</h3><p>settings.gradle 就是负责管理 “当前参与构建的子模块”.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">include(<span class="string">&quot;:app&quot;</span>)</span><br><span class="line"></span><br><span class="line">include(<span class="string">&quot;:external-lib&quot;</span>)</span><br><span class="line">project(<span class="string">&quot;:external-lib&quot;</span>).projectDir = file(<span class="string">&quot;../OtherDirectory/some-library&quot;</span>)</span><br></pre></td></tr></table></figure>
+  <p>#Video</p>
+<p>采用官方推荐的最新单Activity多Fragment方式开发、以及最新androidx库和material设计语言。</p>
+<p>##接口模拟</p>
+<p><a target="_blank" rel="noopener" href="https://anymock.alipay.com/project">https://anymock.alipay.com/project</a></p>
+<p>###统一接口定义</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  success: true,</span><br><span class="line">  msg: &#x27;succcess&#x27;,</span><br><span class="line">  code:200,</span><br><span class="line">  data:&#123;</span><br><span class="line">    <span class="comment">//数据从这里开始，后续接口中返回值默认从data对象下，不做更多说明。</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
+<h3 id="API设计"><a href="#API设计" class="headerlink" title="API设计"></a>API设计</h3><p>####首页</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  banner:[</span><br><span class="line">    &#123;</span><br><span class="line">      id:0,</span><br><span class="line">    pic:&quot;xxx&quot;,</span><br><span class="line">    link:&quot;xxx&quot;,</span><br><span class="line">    type:1,//1显示0隐藏</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">            id:1,</span><br><span class="line">     pic:&quot;xxx&quot;,</span><br><span class="line">    link:&quot;xxx&quot;,</span><br><span class="line">    type:1,//1显示0隐藏</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">            id:2,</span><br><span class="line">      pic:&quot;xxx&quot;,</span><br><span class="line">    link:&quot;xxx&quot;,</span><br><span class="line">    type:1,//1显示0隐藏</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  teacher:[</span><br><span class="line">    &#123;</span><br><span class="line">      id:1101,</span><br><span class="line">      name:&quot;xxx&quot;,</span><br><span class="line">      desc:&quot;巴拉巴拉&quot;</span><br><span class="line">			avatar:&quot;xxx&quot;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      id:1102,</span><br><span class="line">      name:&quot;xxx&quot;,</span><br><span class="line">      desc:&quot;巴拉巴拉&quot;</span><br><span class="line">			avatar:&quot;xxx&quot;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      id:1103,</span><br><span class="line">      name:&quot;xxx&quot;,</span><br><span class="line">      desc:&quot;巴拉巴拉&quot;</span><br><span class="line">			avatar:&quot;xxx&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">	hot:&#123;</span><br><span class="line">    title:&quot;热门课程&quot;,</span><br><span class="line">    [</span><br><span class="line">    	&#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        id:11012,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  course:&#123;</span><br><span class="line">    title:&quot;精选课程&quot;,</span><br><span class="line">    [</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:11011,</span><br><span class="line">        title:&quot;xxx&quot;,</span><br><span class="line">        desc:&quot;desc&quot;,</span><br><span class="line">        num:&quot;2984&quot;,</span><br><span class="line">        price:&quot;0&quot;,</span><br><span class="line">        tag:[</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            name:&quot;移动互联网1&quot;,</span><br><span class="line">            id:220</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h5 id="什么是-dependency-的-configuration"><a href="#什么是-dependency-的-configuration" class="headerlink" title="什么是 dependency 的 configuration"></a>什么是 dependency 的 configuration</h5><p>不同的configuration执行不同策略</p>
-<p>例如 implementation、api、testRuntime</p>
-<p>doFirst`</p>
-<p>当某一个任务开始要做的时候开始执行</p>
-<p><code>doLast</code></p>
-<p>当某一个任务要做完的时候执行</p>
-<p><strong>inputs.dir</strong></p>
-<p><strong>outputs.file</strong></p>
-<p><strong>增量更新</strong></p>
+
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><h4 id="详情"><a href="#详情" class="headerlink" title="详情"></a>详情</h4><h4 id="我的"><a href="#我的" class="headerlink" title="我的"></a>我的</h4><p>##三方</p>
+<h3 id="播放器接入-GSYVideoPlayer"><a href="#播放器接入-GSYVideoPlayer" class="headerlink" title="播放器接入 GSYVideoPlayer"></a>播放器接入 <a target="_blank" rel="noopener" href="https://github.com/CarGuo/GSYVideoPlayer">GSYVideoPlayer</a></h3><h5 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">implementation <span class="string">&#x27;com.shuyu:GSYVideoPlayer:7.1.6&#x27;</span></span><br><span class="line">implementation <span class="string">&#x27;com.shuyu:gsyVideoPlayer-java:7.1.6&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-keep class com.shuyu.gsyvideoplayer.video.** &#123; *; &#125;</span><br><span class="line">-dontwarn com.shuyu.gsyvideoplayer.video.**</span><br><span class="line">-keep class com.shuyu.gsyvideoplayer.video.base.** &#123; *; &#125;</span><br><span class="line">-dontwarn com.shuyu.gsyvideoplayer.video.base.**</span><br><span class="line">-keep class com.shuyu.gsyvideoplayer.utils.** &#123; *; &#125;</span><br><span class="line">-dontwarn com.shuyu.gsyvideoplayer.utils.**</span><br><span class="line">-keep class tv.danmaku.ijk.** &#123; *; &#125;</span><br><span class="line">-dontwarn tv.danmaku.ijk.**</span><br><span class="line"></span><br><span class="line">-keep public class * extends android.view.View&#123;</span><br><span class="line">    *** get*();</span><br><span class="line">    void set*(***);</span><br><span class="line">    public &lt;init&gt;(android.content.Context);</span><br><span class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet);</span><br><span class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 
   
   
@@ -532,7 +536,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://nleme.com/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/>http://nleme.com/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/</a></p>
+                <p>本文永久链接是：<a href=http://nleme.com/2020/09/18/Video%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/>http://nleme.com/2020/09/18/Video%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/</a></p>
               
             
           </blockquote>
@@ -549,10 +553,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-28T12:13:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-18T16:48:36+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jul 28, 2020</p>
+    <p>更新于：Sep 18, 2020</p>
   </a>
 </div>
 
@@ -571,7 +575,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://nleme.com/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/&title= - Sunning&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://nleme.com/2020/09/18/Video%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/&title=Video接口文档 - Sunning&summary="
           
           >
           
@@ -583,7 +587,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://nleme.com/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/&title= - Sunning&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://nleme.com/2020/09/18/Video%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/&title=Video接口文档 - Sunning&summary="
           
           >
           
@@ -595,7 +599,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://nleme.com/2020/07/28/android%20Gradle%E6%9E%84%E5%BB%BA/&title= - Sunning&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://nleme.com/2020/09/18/Video%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/&title=Video接口文档 - Sunning&summary="
           
           >
           
@@ -625,11 +629,11 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i></p>
+      
+        <a class='next' href='/2020/08/07/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/'>
+          <p class='title'><i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>Gradle声明周期初始化阶段​    初始化阶段根据setting.gradle文件配置项目，找出哪些文件要参与到构建中。 实际执行为 settings.gradle 脚本，这个阶段已有的构建...</p>
         </a>
-      
       
     </div>
   
@@ -671,7 +675,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-Hook"><span class="toc-text">生命周期 Hook</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android-Gradle%E6%9E%84%E5%BB%BA"><span class="toc-text">android Gradle构建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-dependency-%E7%9A%84-configuration"><span class="toc-text">什么是 dependency 的 configuration</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#API%E8%AE%BE%E8%AE%A1"><span class="toc-text">API设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-text">分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%A6%E6%83%85"><span class="toc-text">详情</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E7%9A%84"><span class="toc-text">我的</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%AD%E6%94%BE%E5%99%A8%E6%8E%A5%E5%85%A5-GSYVideoPlayer"><span class="toc-text">播放器接入 GSYVideoPlayer</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96"><span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B7%E6%B7%86"><span class="toc-text">混淆</span></a></li></ol></li></ol>
     </div>
   </section>
 

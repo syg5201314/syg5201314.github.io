@@ -5,9 +5,7 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
+      <meta name="robots" content="noindex,follow">
     
   
   <!-- 渲染优化 -->
@@ -21,11 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Sunning</title>
+  <title>Archive: 2019 - Sunning</title>
   
 
-  
-    <meta name="description" content="一个编程的小学生">
   
 
   <!-- feed -->
@@ -421,14 +417,14 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("full" == "none") { // 移除封面 
+  if ("half" == "none") { // 移除封面 
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none"; 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("full" == "half") { // 半屏 
+    if ("half" == "half") { // 半屏 
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half'); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("full" == "full") { // 全屏 
+    } else if ("half" == "full") { // 全屏 
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full'); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
     } 
@@ -442,113 +438,17 @@
         
 
 <div class='l_main'>
-  
+	
+		
   <section class="post-list">
     
       
         
-        
-          
-        
-          
-        
           
         
       
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/09/18/Video%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">
-        Video接口文档
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        #Video
-采用官方推荐的最新单Activity多Fragment方式开发、以及最新androidx库和material设计语言。
-##接口模拟
-https://anymock.alipay.com/project
-###统一接口定义
-12345678&#123;  success: true,  msg: &#x27;succcess&#x27;,  code:200,  data:&#...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-09-18</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/09/18/Video%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/18/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/">
-        gradle生命周期
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Gradle声明周期初始化阶段​    初始化阶段根据setting.gradle文件配置项目，找出哪些文件要参与到构建中。 实际执行为 settings.gradle 脚本，这个阶段已有的构建脚本不会执行。
-配置阶段​    在配置阶段Gradle 构造了一个模型来表示任务,这个阶段非常适合于为项目或指定 task 设置所需的配置。实质为解析每个被加入构建项目的 build.gradle ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-07-18</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/07/18/Gradle%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
       
         
           <div class='post-wrapper'>
@@ -603,6 +503,7 @@ https://anymock.alipay.com/project
   
 
 
+	
 </div>
 <aside class='l_side'>
   
@@ -691,7 +592,6 @@ https://anymock.alipay.com/project
 
 
 </aside>
-
 
 
       </div>
